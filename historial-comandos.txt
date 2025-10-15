@@ -1,0 +1,16 @@
+ 1011  git checkout -b feature/validacion
+ 1012  echo "function validarEmail(email) { return email.includes('@'); }" >> funciones.js
+ 1013  git add .
+ 1014  git commit -m "feat: añadir validación de email"
+ 1015  git checkout desarrollo
+ 1016  git checkout -b respaldo-151025-BJHL
+ 1017  git push -u origin respaldo-151025-BJHL
+ 1018  echo "## Respaldo $(date +%d/%m/%Y)" >> README.md
+ 1019  echo "\n- Rama: respaldo-151025-BJHL" >> README.md
+ 1020  echo "\n- Contiene: desarrollo hasta función de validación" >> README.md
+ 1021  git checkout desarrollo
+ 1022  git merge feature/validacion
+ 1023  git branch -d feature/validacion
+ 1024  git add .
+ 1025  git commit -m "Limpieza y documentación final del código"
+ 1026  git push origin desarrollo
